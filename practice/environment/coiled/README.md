@@ -21,7 +21,7 @@ conda activate ds2-coiled-2025
 
 - Connect to your Coiled account:
 ```bash
-coiled login
+coiled login --workspace class-2025
 ```
 
 - Note that you don't have to follow the Step 2 "Connect your cloud" of the Coiled *Get Started* workflow, only Step 1 "Authenticate your compute" must be validated.
