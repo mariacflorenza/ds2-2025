@@ -45,7 +45,7 @@ You can then connect to one of the existing clusters:
 
 Connect to the cluster, and make it available to Dask for your computation
 ```python
-cluster = coiled.Cluster(name="ds2-highcpu")
+cluster = coiled.Cluster(name="ds2-highcpu", workspace="class-2025")
 client = cluster.get_client()
 ```
 
