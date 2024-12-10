@@ -24,6 +24,8 @@ conda activate ds2-coiled-2025
 coiled login
 ```
 
+- Note that you don't have to follow the Step 2 "Connect your cloud" of the Coiled *Get Started* workflow, only Step 1 "Authenticate your compute" must be validated.
+
 - If you need packages that are missing from the environment, send an email to gmaze@ifremer.fr to ask for its addition and installation. The environment "ds2-coiled-2025" must be updated and uploaded to all cluster workers on the GCP.
 
 
