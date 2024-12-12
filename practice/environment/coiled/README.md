@@ -10,23 +10,25 @@
 
 ### Local Python environment
 
-- Download the "ds2-coiled-2025" environment definition we created for the class from:
+- Download the *ds2-coiled-2025* environment definition we created for the class from:  
   https://github.com/obidam/ds2-2025/blob/main/practice/environment/coiled/environment-coiled.yml
 
-- Install and activate this Python 3.11 environment to easily connect to your Coiled account and GCP clusters:
+- Install and activate this Python 3.11 environment to easily connect to your Coiled account and GCP clusters:  
 ```bash
-conda env create -f environment-coiled.yml
-conda activate ds2-coiled-2025
+miniconda env create -f environment-coiled.yml  
+miniconda activate ds2-coiled-2025
 ```
 
-- Connect to your Coiled account:
+- Connect to your Coiled account:  
 ```bash
 coiled login --workspace class-2025
 ```
 
-- Note that you don't have to follow the Step 2 "Connect your cloud" of the Coiled *Get Started* workflow, only Step 1 "Authenticate your compute" must be validated.
+- Note that you don't have to follow the Step 2 "Connect your cloud" of the Coiled *Get Started* workflow.  
+  Only the Step 1 "Authenticate your compute" must be validated.
 
-- If you need packages that are missing from the environment, send an email to gmaze@ifremer.fr to ask for its addition and installation. The environment "ds2-coiled-2025" must be updated and uploaded to all cluster workers on the GCP.
+- If you need packages that are missing from the environment, send an email to gmaze@ifremer.fr to ask for its addition and installation.  
+  The environment *ds2-coiled-2025* must be updated and uploaded to all cluster workers on the GCP.
 
 
 ## Usage
@@ -67,7 +69,7 @@ y.compute();
 
 ### Jupyter notebook
 
-From your computer, you can use Coiled to create a Jupyter Lab instance in the cloud that will synchronise your local files to the cloud instance:
+From your computer, you can use Coiled to create a Jupyter Lab instance in the cloud that will synchronise your local files to the cloud instance. For the synchronisation to work, you're required to install the [``mutagen``](https://mutagen.io/documentation/introduction/installation) software for your OS.
 
 ```bash
 conda activate ds2-coiled-2025
