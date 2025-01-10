@@ -1,2 +1,2 @@
-FROM pangeo/pangeo-notebook:2023.12.17
-# We recommend using a specific tag above from https://hub.docker.com/r/pangeo/base-image/tags
+FROM pangeo/pangeo-notebook:2024.02.02
+# We recommend using a specific tag above from https://hub.docker.com/r/pangeo/pangeo-notebook/tags
