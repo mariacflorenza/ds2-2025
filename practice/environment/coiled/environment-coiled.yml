@@ -20,6 +20,7 @@ dependencies:
   - s3fs
   - xarrayutils
   - copernicusmarine
+  - graphviz
   - pip
   - pip:
     - httpimport
