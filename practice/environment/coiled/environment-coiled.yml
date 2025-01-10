@@ -13,6 +13,7 @@ dependencies:
   - scikit-learn
   - seaborn
   - dask-ml
+  - graphviz
   - coiled
   - google-cloud-sdk
   - ipykernel
@@ -20,7 +21,6 @@ dependencies:
   - s3fs
   - xarrayutils
   - copernicusmarine
-  - graphviz
   - pip
   - pip:
     - httpimport

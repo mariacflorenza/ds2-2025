@@ -16,6 +16,17 @@ dependencies:
   - seaborn
   - dask-ml
   - graphviz
+  - coiled
+  - google-cloud-sdk
+  - ipykernel
+  - argopy
+  - s3fs
+  - xarrayutils
+  - copernicusmarine
   - pip
   - pip:
     - httpimport
+    - coiled[notebook]
+    - pyopenssl==24.3.0
+
+
