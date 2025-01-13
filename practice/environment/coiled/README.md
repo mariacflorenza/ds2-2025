@@ -10,13 +10,13 @@
 
 ### Local Python environment
 
-- Download the *ds2-coiled-2025* environment definition we created for the class from:  
-  https://github.com/obidam/ds2-2025/blob/main/practice/environment/coiled/environment-coiled.yml
+- Download the *ds2-coiled-2025-binder* environment definition we created for the class from:  
+  https://github.com/obidam/ds2-2025/blob/main/practice/environment/coiled/environment-coiled-pinned-binder.yml
 
 - Install and activate this Python 3.11 environment to easily connect to your Coiled account and GCP clusters:  
 ```bash
 miniconda env create -f environment-coiled.yml  
-miniconda activate ds2-coiled-2025
+miniconda activate ds2-coiled-2025-binder
 ```
 
 - Connect to your Coiled account:  
