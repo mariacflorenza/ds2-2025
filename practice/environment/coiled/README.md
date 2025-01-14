@@ -6,16 +6,19 @@
 - Create a Coiled account with your academic email at:
   https://cloud.coiled.io/signup
 
-- Send an email to gmaze@ifremer.fr to get access to shared resources from the "class-2025" Coiled workspace.
+- Send your Coiled account login by email to gmaze@ifremer.fr to get access to shared resources from the "class-2025" Coiled workspace.
 
 ### Local Python environment
 
 - Download the *ds2-coiled-2025-binder* environment definition we created for the class from:  
   https://github.com/obidam/ds2-2025/blob/main/practice/environment/coiled/environment-coiled-pinned-binder.yml
 
+- Note that if you're running on Windows, you must be working with this environment: 
+  https://github.com/obidam/ds2-2025/blob/main/practice/environment/coiled/environment-coiled-pinned-binder-windows.yml
+
 - Install and activate this Python 3.11 environment to easily connect to your Coiled account and GCP clusters:  
 ```bash
-miniconda env create -f environment-coiled-pinned-binder.yml  
+miniconda env create -f environment-coiled-pinned-binder.yml
 miniconda activate ds2-coiled-2025-binder
 ```
 
