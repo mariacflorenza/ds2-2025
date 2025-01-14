@@ -143,8 +143,7 @@ jobs:
           curl.exe -o google-cloud-cli-502.0.0-windows-x86_64.zip --url https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-502.0.0-windows-x86_64.zip
           tar -xf google-cloud-cli-502.0.0-windows-x86_64.zip
           dir .
-#          .\google-cloud-sdk\install.bat
-
+          .\google-cloud-sdk\install.bat /S
         shell: cmd
 
       - name: Setup Micromamba ${{ matrix.python-version }}
