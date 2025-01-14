@@ -15,7 +15,7 @@
 
 - Install and activate this Python 3.11 environment to easily connect to your Coiled account and GCP clusters:  
 ```bash
-miniconda env create -f environment-coiled.yml  
+miniconda env create -f environment-coiled-pinned-binder.yml  
 miniconda activate ds2-coiled-2025-binder
 ```
 
@@ -28,7 +28,7 @@ coiled login --workspace class-2025
   Only the Step 1 "Authenticate your compute" must be validated.
 
 - If you need packages that are missing from the environment, send an email to gmaze@ifremer.fr to ask for its addition and installation.  
-  The environment *ds2-coiled-2025* must be updated and uploaded to all cluster workers on the GCP.
+  The environment *ds2-coiled-2025-binder* must be updated and uploaded to all cluster workers on the GCP.
 
 
 ## Usage
@@ -47,7 +47,7 @@ You can then connect to one of the existing clusters:
 
 Connect to the cluster, and make it available to Dask for your computation
 ```python
-cluster = coiled.Cluster(name="ds2-highcpu", workspace="class-2025")
+cluster = coiled.Cluster(name="ds2-highmem", workspace="class-2025")
 client = cluster.get_client()
 ```
 
@@ -72,14 +72,14 @@ y.compute();
 From your computer, you can use Coiled to create a Jupyter Lab instance in the cloud that will synchronise your local files to the cloud instance. For the synchronisation to work, you're required to install the [``mutagen``](https://mutagen.io/documentation/introduction/installation) software for your OS.
 
 ```bash
-conda activate ds2-coiled-2025
-coiled notebook start --sync --idle-timeout '1 hour' --vm-type n1-highmem-2 --name notebook-gmaze --software ds2-coiled-2025
+conda activate ds2-coiled-2025-binder
+coiled notebook start --sync --workspace class-2025 --idle-timeout '1 hour' --vm-type n1-highmem-2 --name notebook-gmaze --software ds2-coiled-2025-binder
 ```
 
 Then on the Jupyter Lab instance, you can connect to the class clusters (see above):
 ```python
 import coiled
 from dask.distributed import Client
-cluster = coiled.Cluster(name="ds2-highcpu")
+cluster = coiled.Cluster(name="ds2-highmem")
 client = cluster.get_client()
 ```
