@@ -148,12 +148,15 @@ jobs:
       - name: Help Google SDK
         shell: cmd
         run: |
-          call "C:\Program Files\google-cloud-sdk\install.bat --help"
+          cd /d C:\Program Files\google-cloud-sdk
+          dir .
+          .\install.bat --help
 
       - name: Install Google SDK 1
         shell: cmd
         run: |          
-          .\google-cloud-sdk\install.bat --quiet --path-update true
+          cd /d C:\Program Files\google-cloud-sdk
+          .\install.bat --quiet --path-update true
 
       - name: Install Google SDK 2
         shell: cmd
