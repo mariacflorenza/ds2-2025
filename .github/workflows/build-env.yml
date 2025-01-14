@@ -143,8 +143,6 @@ jobs:
         run: |
           curl.exe -o gcloud-sdk.zip --url https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-502.0.0-windows-x86_64.zip
           tar -xf gcloud-sdk.zip          
-          dir .
-          .\google-cloud-sdk\install.bat --help
           .\google-cloud-sdk\install.bat --quiet --path-update true
 
       - name: Check Google SDK 1
