@@ -145,7 +145,7 @@ jobs:
           tar -xf google-cloud-cli-502.0.0-windows-x86_64.zip
           dir .
           .\google-cloud-sdk\install.bat --quiet                    
-          set PATH=%PATH%;D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin
+          D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin --version
 #          setx PATH "%PATH%;C:\path\to\binary"
 
       - name: Check Google SDK
