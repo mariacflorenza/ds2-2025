@@ -149,10 +149,14 @@ jobs:
           dir D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin
           echo "D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin" >> $GITHUB_PATH
 
-      - name: Check Google SDK
+      - name: Check Google SDK 1
         shell: cmd
         run: |                 
           D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin\gcloud info
+
+      - name: Check Google SDK 2
+        shell: cmd
+        run: |                 
           gcloud info
 
       - name: Setup Micromamba ${{ matrix.python-version }}
