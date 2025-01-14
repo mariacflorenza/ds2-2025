@@ -73,7 +73,7 @@ From your computer, you can use Coiled to create a Jupyter Lab instance in the c
 
 ```bash
 conda activate ds2-coiled-2025-binder
-coiled notebook start --sync --workspace class-2025 --idle-timeout '1 hour' --vm-type n1-highmem-2 --name notebook-gmaze --software ds2-coiled-2025-binder
+coiled notebook start --sync --workspace class-2025 --idle-timeout '1 hour' --vm-type n1-highmem-2 --name notebook-user --software ds2-coiled-2025-binder
 ```
 
 Then on the Jupyter Lab instance, you can connect to the class clusters (see above):
