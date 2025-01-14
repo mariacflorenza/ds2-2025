@@ -75,11 +75,11 @@ def create_map(extent=[-180, 180, -70, 70], dpi=200, figsize=(12,4)):
         linewidth=0.5, color=[0.6]*3, alpha=0.5, linestyle='--')
     # gl.xlocator = mticker.FixedLocator(np.linspace(-180,180,360/10+1))
     # gl.ylocator = mticker.FixedLocator(np.linspace(-90,90,180/5+1))
-    gl.xlocator = mticker.FixedLocator(np.linspace(-180,360,int(360/30)+1))
+    gl.xlocator = mticker.FixedLocator(np.linspace(-180,180,int(360/30)+1))
     gl.ylocator = mticker.FixedLocator(np.linspace(-90,90,int(180/20)+1))
     gl.top_labels = False
     gl.right_labels = False
-    ax.add_feature(cfeature.LAND, facecolor=[0.7]*3, zorder=100)
+    ax.add_feature(cfeature.LAND, facecolor=[0.7]*3)
     ax.add_feature(cfeature.COASTLINE)
     return fig, proj, ax
 
