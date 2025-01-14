@@ -42,12 +42,12 @@ from dask.distributed import Client
 
 You can then connect to one of the existing clusters:
 
-- ``ds2-highcpu``: 128 vCPUs, 0.9 GB of system memory per vCPU
-- ``ds2-highmem``: 64 vCPUs, 6.5 GB of system memory per vCPU
+- ``ds2-highcpu-binder``: 128 vCPUs, 0.9 GB of system memory per vCPU
+- ``ds2-highmem-binder``: 64 vCPUs, 6.5 GB of system memory per vCPU
 
 Connect to the cluster, and make it available to Dask for your computation
 ```python
-cluster = coiled.Cluster(name="ds2-highmem", workspace="class-2025")
+cluster = coiled.Cluster(name="ds2-highmem-binder", workspace="class-2025")
 client = cluster.get_client()
 ```
 
@@ -80,6 +80,6 @@ Then on the Jupyter Lab instance, you can connect to the class clusters (see abo
 ```python
 import coiled
 from dask.distributed import Client
-cluster = coiled.Cluster(name="ds2-highmem")
+cluster = coiled.Cluster(name="ds2-highmem-binder")
 client = cluster.get_client()
 ```
