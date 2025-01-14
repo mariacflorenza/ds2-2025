@@ -140,7 +140,7 @@ jobs:
 
       - name: Install Google SDK
         run: |
-          curl -o "https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-502.0.0-windows-x86_64.zip" "$env:Temp\google-cloud-cli-502.0.0-windows-x86_64.zip"
+          curl -o "$env:Temp\google-cloud-cli-502.0.0-windows-x86_64.zip" "https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-502.0.0-windows-x86_64.zip"
 
       - name: Setup Micromamba ${{ matrix.python-version }}
         uses: mamba-org/setup-micromamba@v2
