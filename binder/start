@@ -4,6 +4,9 @@
 
 export PANGEO_ENV="BINDER_TEMPLATE"
 
+wget https://raw.githubusercontent.com/obidam/ds2-2025/main/binder/matplotlib-fonts.zip
+unzip matplotlib-fonts.zip -d /home/jovyan/.cache/matplotlib
+
 # ==== ONLY EDIT WITHIN THIS BLOCK =====
 
 exec "$@"
