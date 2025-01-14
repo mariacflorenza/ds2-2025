@@ -138,11 +138,20 @@ jobs:
           echo "PYTHON_VERSION=${{ matrix.python-version }}" >> $GITHUB_ENV
           echo "LOG_FILE=Py${{matrix.python-version}}-${{matrix.os}}.log" >> $GITHUB_ENV
 
-      - name: Install Google SDK
+      - name: Download Google SDK
         shell: cmd
         run: |
           curl.exe -o gcloud-sdk.zip --url https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-502.0.0-windows-x86_64.zip
           tar -xf gcloud-sdk.zip          
+
+      - name: Help Google SDK
+        shell: cmd
+        run: |          
+          .\google-cloud-sdk\install.bat --help
+
+      - name: Install Google SDK
+        shell: cmd
+        run: |          
           .\google-cloud-sdk\install.bat --quiet --path-update true
 
       - name: Check Google SDK 1
