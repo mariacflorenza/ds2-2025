@@ -139,12 +139,18 @@ jobs:
           echo "LOG_FILE=Py${{matrix.python-version}}-${{matrix.os}}.log" >> $GITHUB_ENV
 
       - name: Install Google SDK
+        shell: cmd
         run: |
           curl.exe -o google-cloud-cli-502.0.0-windows-x86_64.zip --url https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-502.0.0-windows-x86_64.zip
           tar -xf google-cloud-cli-502.0.0-windows-x86_64.zip
           dir .
-          .\google-cloud-sdk\install.bat --quiet
+          .\google-cloud-sdk\install.bat --quiet                    
+          set PATH=%PATH%;"$env:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin"
+
+      - name: Check Google SDK
         shell: cmd
+        run: |
+          gcloud --help
 
       - name: Setup Micromamba ${{ matrix.python-version }}
         uses: mamba-org/setup-micromamba@v2
