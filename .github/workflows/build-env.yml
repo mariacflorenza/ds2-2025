@@ -146,12 +146,13 @@ jobs:
           dir .
           .\google-cloud-sdk\install.bat --quiet
           dir D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin
+          echo "D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin" >> $GITHUB_PATH
 
       - name: Check Google SDK
         shell: cmd
         run: |                 
           dir D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin
-          gcloud --version
+          D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin\gcloud --version
 
       - name: Setup Micromamba ${{ matrix.python-version }}
         uses: mamba-org/setup-micromamba@v2
