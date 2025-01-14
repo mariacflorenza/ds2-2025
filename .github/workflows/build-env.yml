@@ -153,6 +153,8 @@ jobs:
         shell: cmd
         run: |          
           .\google-cloud-sdk\install.bat --quiet --path-update true
+          source '.\google-cloud-sdk\path.bash.inc'
+          source '.\google-cloud-sdk\completion.bash.inc'          
 
       - name: Check Google SDK 1
         shell: cmd
