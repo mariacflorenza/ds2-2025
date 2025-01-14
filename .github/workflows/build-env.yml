@@ -158,7 +158,11 @@ jobs:
         shell: cmd
         run: |          
           setx PATH "%PATH%;D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin"
-          echo PATH
+
+      - name: Install Google SDK 3
+        shell: cmd
+        run: |          
+          echo %PATH%
 
       - name: Check Google SDK 1
         shell: cmd
