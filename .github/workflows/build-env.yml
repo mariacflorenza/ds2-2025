@@ -152,6 +152,7 @@ jobs:
       - name: Check Google SDK
         shell: cmd
         run: |                 
+          D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin\gcloud info
           gcloud info
 
       - name: Setup Micromamba ${{ matrix.python-version }}
