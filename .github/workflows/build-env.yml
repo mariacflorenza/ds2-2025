@@ -144,6 +144,7 @@ jobs:
           curl.exe -o gcloud-sdk.zip --url https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-502.0.0-windows-x86_64.zip
           tar -xf gcloud-sdk.zip          
           dir .
+          .\google-cloud-sdk\install.bat --help
           .\google-cloud-sdk\install.bat --quiet
           dir D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin
           echo "D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin" >> $GITHUB_PATH
@@ -151,8 +152,6 @@ jobs:
       - name: Check Google SDK
         shell: cmd
         run: |                 
-          dir D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin
-          D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin\gcloud info
           gcloud info
 
       - name: Setup Micromamba ${{ matrix.python-version }}
