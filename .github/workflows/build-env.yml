@@ -142,10 +142,10 @@ jobs:
         shell: cmd
         run: |
           wget https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-502.0.0-windows-x86_64.zip -o gcloud-sdk.zip
-          mkdir -p $HOME/gcloud
-          tar -xf gcloud-sdk.zip -C $HOME/gcloud
-          $HOME/gcloud/google-cloud-sdk/install.sh --quiet
-          echo "$HOME/gcloud/google-cloud-sdk/bin" >> $GITHUB_PATH
+          tar -xf gcloud-sdk.zip
+          dir .
+          .\google-cloud-sdk\install.sh --quiet
+          echo "D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin" >> $GITHUB_PATH
 
       - name: Check Google SDK
         shell: cmd
