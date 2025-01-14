@@ -145,9 +145,7 @@ jobs:
           tar -xf gcloud-sdk.zip          
           dir .
           .\google-cloud-sdk\install.bat --help
-          .\google-cloud-sdk\install.bat --quiet
-          dir D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin
-          echo "D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin" >> $GITHUB_PATH
+          .\google-cloud-sdk\install.bat --quiet --path-update true
 
       - name: Check Google SDK 1
         shell: cmd
