@@ -70,3 +70,5 @@ def check_up_env(with_tuto=False):
             repo = "https://raw.githubusercontent.com/obidam/ds2-2025/main/"
             urllib.request.urlretrieve(os.path.join(repo, "practice/exploratory_statistics/tuto_tools.py"),
                                        os.path.join(".", "tuto_tools.py"))
+            import tuto_tools as ds2tools
+            return ds2tools
