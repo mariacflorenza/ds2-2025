@@ -134,7 +134,7 @@ jobs:
 
       - name: Set environment variables
         run: |
-          echo "CONDA_ENV_FILE=practice/environment/coiled/environment-coiled-pinned-binder.yml" >> $GITHUB_ENV
+          echo "CONDA_ENV_FILE=practice/environment/coiled/environment-coiled-pinned-binder-windows.yml" >> $GITHUB_ENV
           echo "PYTHON_VERSION=${{ matrix.python-version }}" >> $GITHUB_ENV
           echo "LOG_FILE=Py${{matrix.python-version}}-${{matrix.os}}.log" >> $GITHUB_ENV
 
