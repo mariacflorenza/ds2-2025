@@ -157,7 +157,7 @@ jobs:
       - name: Install Google SDK 2
         shell: cmd
         run: |          
-          set PATH "%PATH%;D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin"  
+          setx PATH "%PATH%;D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin"
 
       - name: Install Google SDK 3
         shell: cmd
