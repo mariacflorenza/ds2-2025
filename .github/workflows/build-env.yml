@@ -141,8 +141,8 @@ jobs:
       - name: Install Google SDK
         shell: cmd
         run: |
-          wget https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-502.0.0-windows-x86_64.zip -o gcloud-sdk.zip
-          tar -xf gcloud-sdk.zip
+          curl.exe -o gcloud-sdk.zip --url https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-502.0.0-windows-x86_64.zip
+          tar -xf gcloud-sdk.zip          
           dir .
           .\google-cloud-sdk\install.sh --quiet
           echo "D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin" >> $GITHUB_PATH
