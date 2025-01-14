@@ -141,18 +141,15 @@ jobs:
       - name: Install Google SDK
         shell: cmd
         run: |
-          curl.exe -o google-cloud-cli-502.0.0-windows-x86_64.zip --url https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-502.0.0-windows-x86_64.zip
-          tar -xf google-cloud-cli-502.0.0-windows-x86_64.zip
-          dir .
-          .\google-cloud-sdk\install.sh --help 
-          .\google-cloud-sdk\install.bat --quiet   
+          wget https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-502.0.0-windows-x86_64.zip -o gcloud-sdk.zip
+          mkdir -p $HOME/gcloud
+          tar -xf gcloud-sdk.zip -C $HOME/gcloud
+          $HOME/gcloud/google-cloud-sdk/install.sh --quiet
+          echo "$HOME/gcloud/google-cloud-sdk/bin" >> $GITHUB_PATH
 
       - name: Check Google SDK
         shell: cmd
         run: |                 
-          dir D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin
-          setx PATH "%PATH%;D:\a\ds2-2025\ds2-2025\google-cloud-sdk\bin"          
-          echo "%PATH%"
           gcloud --version
 
       - name: Setup Micromamba ${{ matrix.python-version }}
