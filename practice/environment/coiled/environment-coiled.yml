@@ -21,6 +21,8 @@ dependencies:
   - s3fs
   - xarrayutils
   - copernicusmarine
+  - gsw
+
   - pip
   - pip:
     - httpimport

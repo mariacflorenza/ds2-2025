@@ -20,6 +20,8 @@ dependencies:
   - s3fs = 2024.10.0
   - xarrayutils = 2.0.1
   - copernicusmarine = 1.3.5
+  - gsw = 3.6.19
+
   - pip = 24.3.1
   - pip:
     - httpimport==1.4.0
