@@ -10,19 +10,36 @@
 
 ### Local Python environment
 
-- Download the *ds2-coiled-2025-binder* environment definition we created for the class from:  
+#### For MacOS and Linux systems
+
+- Download the *ds2-coiled-2025-binder* environment definition we created for the class from here:  
   https://github.com/obidam/ds2-2025/blob/main/practice/environment/coiled/environment-coiled-pinned-binder.yml
 
-- Note that if you're running on Windows, you must be working with this environment: 
-  https://github.com/obidam/ds2-2025/blob/main/practice/environment/coiled/environment-coiled-pinned-binder-windows.yml
-
-- Install and activate this Python 3.11 environment to easily connect to your Coiled account and GCP clusters:  
+- Install and activate this Python 3.11 environment with a package manager like miniconda:  
 ```bash
 miniconda env create -f environment-coiled-pinned-binder.yml
 miniconda activate ds2-coiled-2025-binder
 ```
 
-- Connect to your Coiled account:  
+#### For Windows system
+
+- Download the *ds2-coiled-2025-binder-windows* environment definition we created for the class from here:  
+  https://github.com/obidam/ds2-2025/blob/main/practice/environment/coiled/environment-coiled-pinned-binder-windows.yml
+
+- Install and activate this Python 3.11 environment with a package manager like miniconda:  
+```bash
+miniconda env create -f environment-coiled-pinned-binder.yml
+miniconda activate ds2-coiled-2025-binder
+```
+
+- Finally, since the google-cloud-sdk library is not available with a package manager, it must be installed manually, and you need to install the specific release 502 from:
+  https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-502.0.0-windows-x86_64.zip
+
+- Note that we won't actually use the Google Cloud SDK from the notebooks, but it is required by Coiled to setup the Dask cluster on the Google Cloud Perform. So, you don't need to configure the SDK with ``gcloud init``.
+
+### Connect to Coiled
+
+- You now need to connect to your Coiled account with the appropriate workspace:
 ```bash
 coiled login --workspace class-2025
 ```

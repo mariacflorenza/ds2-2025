@@ -15,7 +15,7 @@ dependencies:
   - seaborn = 0.13.2
   - dask-ml = 2023.3.24
   - coiled = 1.71.1
-#  - google-cloud-sdk = 502.0.0  # Installed manualy because not available for Windows
+#  - google-cloud-sdk = 502.0.0  # Installed manually because not available for Windows
   - ipykernel = 6.29.0
   - argopy = 0.1.14
   - s3fs = 2023.12.2
