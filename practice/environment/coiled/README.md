@@ -50,6 +50,11 @@ coiled login --workspace class-2025
 - If you need packages that are missing from the environment, send an email to gmaze@ifremer.fr to ask for its addition and installation.  
   The environment *ds2-coiled-2025-binder* must be updated and uploaded to all cluster workers on the GCP.
 
+### Add the new environment kernel to Jupyter
+
+```bash
+python -m ipykernel install --user --name=ds2-coiled-2025-binder
+```
 
 ## Usage
 
