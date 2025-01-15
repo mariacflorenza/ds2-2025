@@ -62,8 +62,8 @@ from dask.distributed import Client
 
 You can then connect to one of the existing clusters:
 
-- ``ds2-highcpu-binder``: 128 vCPUs, 0.9 GB of system memory per vCPU
-- ``ds2-highmem-binder``: 64 vCPUs, 6.5 GB of system memory per vCPU
+- ``ds2-highcpu-binder``: 160 vCPUs, 3.75 GB of system memory per vCPU
+- ``ds2-highmem-binder``: 20 vCPUs, 6.5 GB of system memory per vCPU
 
 Connect to the cluster, and make it available to Dask for your computation
 ```python
