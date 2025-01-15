@@ -10,35 +10,17 @@
 
 ### Computation set-up
 
-Please follow instructions on Coiled at: https://github.com/obidam/ds2-2025/blob/main/practice/environment/coiled/README.md 
+Please follow instructions from: https://github.com/obidam/ds2-2025/blob/main/practice/environment/coiled/README.md 
 
 ### Project 5: Ocean warming
  
 Get all the details and a starter notebook here:
 https://github.com/obidam/ds2-2025/blob/main/projects/P5-OceanWarming-for-students.ipynb
 
-### Project 6: Ocean warming contribution to Sea level rise
+### Project 6: Ocean thermal and haline change contributions to Sea Level trends
  
-*Description*: Sea level increases because of changes in currents (dynamic effect) and because of ocean density changes (steric effect). Compute ocean density changes contribution to Sea level rises (thermosteric effect) and demonstrate that it is the driver of regional sea level change trends.
- 
-*Bibliography*:
-[Ocean and climate scientific sheet](https://ocean-climate.org/wp-content/uploads/2015/03/sea-level_ScientificItems_BD-3.pdf), 
-[Overview](https://sealevel.nasa.gov/understanding-sea-level/overview), [Deep-ocean contribution to sea level and energy budget not detectable over the past decade](https://www.nature.com/articles/nclimate2387), [Last IPCC report on Sea Level changes](https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter_09.pdf#page=55), [IPCC fig 9.12](https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter_09.pdf#page=237)
-
-*Data*: You can use the [EN4 dataset](https://www.metoffice.gov.uk/hadobs/en4/) that is an interpolation of all available ocean observations (of temperature and salinity) onto a regular space/time grid.
-
-This dataset can be accessed this way:
-    
-    from intake import open_catalog
-    catalog_url = 'https://raw.githubusercontent.com/obidam/ds2-2025/main/ds2_data_catalog.yml'
-    cat = open_catalog(catalog_url)
-    ds = cat["en4"].to_dask()
-
-**Sea Level data** accessible on the catalog as well here:
-
-    ds = cat["sea_surface_height"].to_dask()
-
-You should also need GSW: https://teos-10.github.io/GSW-Python/
+Get all the details and a starter notebook here:
+https://github.com/obidam/ds2-2025/blob/main/projects/P6-OceanWarmingSeaLEvel-for-students.ipynb
 
 ## Projects 7 and 8: Future Arctic sea ice change (Arctic) / the Atlantic Multidecadal Oscillation
 
