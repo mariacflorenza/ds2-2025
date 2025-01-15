@@ -89,7 +89,9 @@ y.compute();
 
 ### Jupyter notebook
 
-From your computer, you can use Coiled to create a Jupyter Lab instance in the cloud that will synchronise your local files to the cloud instance. For the synchronisation to work, you're required to install the [``mutagen``](https://mutagen.io/documentation/introduction/installation) software for your OS.
+From your computer, you can use Coiled to create a Jupyter Lab instance in the cloud that will synchronise your local files to the cloud instance. 
+
+For the synchronisation to work, you're required to install the [``mutagen``](https://mutagen.io/documentation/introduction/installation) software for your OS.
 
 ```bash
 conda activate ds2-coiled-2025-binder
