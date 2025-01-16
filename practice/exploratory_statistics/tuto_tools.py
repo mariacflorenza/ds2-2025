@@ -94,7 +94,7 @@ def create_map(extent=[-180, 180, -70, 70], dpi=200, figsize=(12, 4)):
         ax = fig.add_axes([0, 0, 1, 1])
         ax.set_xlim(extent[0:2])
         ax.set_ylim(extent[2:4])
-        ax.set_xticks(np.linspace(-180, 360, int(360 / 30) + 1))
+        ax.set_xticks(np.linspace(-180, 180, int(360 / 30) + 1))
         ax.set_yticks(np.linspace(-90, 90, int(180 / 20) + 1))
 
     return fig, proj, ax
