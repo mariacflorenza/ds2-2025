@@ -36,6 +36,14 @@ def check_up_env(with_tuto=False):
             print("Error:", sys.exc_info()[0])
             return False
 
+    if with_tuto:
+        with tempfile.TemporaryDirectory() as tmpdirname:
+            sys.path.append(tmpdirname)
+            repo = "https://raw.githubusercontent.com/obidam/ds2-2025/main/"
+            urllib.request.urlretrieve(os.path.join(repo, "practice/exploratory_statistics/tuto_tools.py"),
+                                       os.path.join(tmpdirname, "tuto_tools.py"))
+            import tuto_tools as ds2tools
+
     if 'google.colab' in str(get_ipython()):
         # If we run this notebook at colab.research.google.com, we need to install more packages:
         warnings.warn(
@@ -54,10 +62,6 @@ def check_up_env(with_tuto=False):
             execute_this("mamba install -q -c conda-forge cartopy seaborn gsw scikit-learn", prt=False)
             # execute_this("pip install --upgrade seaborn gsw scikit-learn", prt=False)
 
-            # !pip install -q condacolab
-            # import condacolab
-            # condacolab.install()
-
     elif os.getenv('BINDER_SERVICE_HOST'):
         warnings.warn("\nRunning on a Binder instance\nBe aware that your changes won't be saved")
 
@@ -65,12 +69,6 @@ def check_up_env(with_tuto=False):
         warnings.warn("\nRunning on your own environment\nMake sure to have all necessary packages installed\nSee:   https://github.com/obidam/ds2-2025/blob/main/practice/environment/coiled/environment-coiled-pinned-binder.yml")
 
     if with_tuto:
-        with tempfile.TemporaryDirectory() as tmpdirname:
-            sys.path.append(tmpdirname)
-            repo = "https://raw.githubusercontent.com/obidam/ds2-2025/main/"
-            urllib.request.urlretrieve(os.path.join(repo, "practice/exploratory_statistics/tuto_tools.py"),
-                                       os.path.join(tmpdirname, "tuto_tools.py"))
-            import tuto_tools as ds2tools
         return ds2tools
     else:
         return None
