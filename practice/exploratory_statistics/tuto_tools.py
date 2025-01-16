@@ -60,29 +60,44 @@ def vrangec(V):
 
 # Plotting functions
 
-def create_map(extent=[-180, 180, -70, 70], dpi=200, figsize=(12,4)):
+def create_map(extent=[-180, 180, -70, 70], dpi=200, figsize=(12, 4)):
     """Create a figure with a map
         Return fig, proj, ax
     """
-    import cartopy.crs as ccrs
-    import cartopy.feature as cfeature
+
+    def load_cartopy():
+        try:
+            import cartopy.crs as ccrs
+            import cartopy.feature as cfeature
+            return ccrs, cfeature
+        except:
+            return None, None
+
+    ccrs, cfeature = load_cartopy()
 
     fig = plt.figure(figsize=figsize, dpi=dpi)
-    proj = ccrs.PlateCarree()
-    ax = fig.add_axes([0,0,1,1],projection=proj)
-    ax.set_extent(extent, crs=proj)
-    gl=ax.gridlines(crs=proj, draw_labels=True,
-        linewidth=0.5, color=[0.6]*3, alpha=0.5, linestyle='--')
-    # gl.xlocator = mticker.FixedLocator(np.linspace(-180,180,360/10+1))
-    # gl.ylocator = mticker.FixedLocator(np.linspace(-90,90,180/5+1))
-    gl.xlocator = mticker.FixedLocator(np.linspace(-180,180,int(360/30)+1))
-    gl.ylocator = mticker.FixedLocator(np.linspace(-90,90,int(180/20)+1))
-    gl.top_labels = False
-    gl.right_labels = False
-    ax.add_feature(cfeature.LAND, facecolor=[0.7]*3)
-    ax.add_feature(cfeature.COASTLINE)
-    return fig, proj, ax
 
+    if ccrs is not None:
+        proj = ccrs.PlateCarree()
+        ax = fig.add_axes([0, 0, 1, 1], projection=proj)
+        ax.set_extent(extent, crs=proj)
+        gl = ax.gridlines(crs=proj, draw_labels=True,
+                          linewidth=0.5, color=[0.6] * 3, alpha=0.5, linestyle='--')
+        gl.xlocator = mticker.FixedLocator(np.linspace(-180, 360, int(360 / 30) + 1))
+        gl.ylocator = mticker.FixedLocator(np.linspace(-90, 90, int(180 / 20) + 1))
+        gl.top_labels = False
+        gl.right_labels = False
+        ax.add_feature(cfeature.LAND, facecolor=[0.7] * 3)
+        ax.add_feature(cfeature.COASTLINE)
+    else:
+        proj = None
+        ax = fig.add_axes([0, 0, 1, 1])
+        ax.set_xlim(extent[0:2])
+        ax.set_ylim(extent[2:4])
+        ax.set_xticks(np.linspace(-180, 360, int(360 / 30) + 1))
+        ax.set_yticks(np.linspace(-90, 90, int(180 / 20) + 1))
+
+    return fig, proj, ax
 
 def plot2d_labels(X, labels, cluster_centers=np.empty(()), dpi=80, kmarkersize=10):
     """Create figure with a scatter plot of X colored by 'labels'"""
